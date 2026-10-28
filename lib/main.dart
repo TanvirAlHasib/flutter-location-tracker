@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:ostad_map/feature/home/presentation/pages/home_screen.dart';
+import 'package:ostad_map/feature/home/presentation/provider/location_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(create: (context) => LocationProvider(), child: const MyApp(),)
+  );
 }
 
 class MyApp extends StatelessWidget {
